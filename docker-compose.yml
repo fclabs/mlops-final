@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - ./local-data/postgres/data:/var/lib/postgresql/data
+    networks:
+      - postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    networks:
+      - postgres
+
+  dbt:
+    build: ./dbt
+    image: dbt-postgres
+    volumes: 
+      - ./dbt/src:/code
+      - /home/fede/.dbt/profiles.yml:/root/.dbt/profiles.yml
+    depends_on:
+      - postgres
+    networks:
+      - postgres
+    
+
+
+networks:
+  postgres:

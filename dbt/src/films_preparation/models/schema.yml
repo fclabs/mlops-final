@@ -1,0 +1,12 @@
+
+version: 2
+
+sources:
+  - name: source_tables
+    description: "Tables imported from CSV"
+    database: mlops
+    schema: source_csv
+    tables:
+      - name: peliculas_csv
+      - name: scores_csv
+      - name: usuarios_csv

@@ -1,0 +1,48 @@
+[0m16:27:17.849679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e5bc7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e4eb6740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e4eb66e0>]}
+
+
+============================== 16:27:17.880174 | fe99addf-87e4-4ab0-9ad4-cab5ec5a80a0 ==============================
+[0m16:27:17.880174 [info ] [MainThread]: Running with dbt=1.9.1
+[0m16:27:17.880845 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/home/fede/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt init films_preparation', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:27:17.910239 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object.. Dictionary: {'dir': PosixPath('/home/fede/.dbt')}
+[0m16:27:17.910758 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m16:27:17.912134 [debug] [MainThread]: Starter project path: /home/fede/.cache/pypoetry/virtualenvs/dbt-xs23MZG9-py3.10/lib/python3.10/site-packages/dbt/include/starter_project
+[0m16:27:17.914432 [info ] [MainThread]: 
+Your new dbt project "films_preparation" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:27:17.914868 [info ] [MainThread]: Setting up your profile.
+[0m16:28:31.614509 [info ] [MainThread]: Profile films_preparation written to /home/fede/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:28:31.620414 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 73.82831, "process_in_blocks": "1048", "process_kernel_time": 0.288194, "process_mem_max_rss": "101564", "process_out_blocks": "23992", "process_user_time": 2.473587}
+[0m16:28:31.622485 [debug] [MainThread]: Command `dbt init` succeeded at 16:28:31.622036 after 73.83 seconds
+[0m16:28:31.624027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e5bc7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e52525c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f33e4fb0d30>]}
+[0m16:28:31.625736 [debug] [MainThread]: Flushing usage events
+[0m16:28:32.413997 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:44:46.442746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ac44bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ab20c8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ab20c880>]}
+
+
+============================== 23:44:46.445464 | d4c55fc6-8afa-4359-8275-a738c4588acd ==============================
+[0m23:44:46.445464 [info ] [MainThread]: Running with dbt=1.9.1
+[0m23:44:46.446183 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/fede/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:44:46.446653 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/fede/mlops/dbt/src/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:44:46.447828 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06193245, "process_in_blocks": "0", "process_kernel_time": 0.106945, "process_mem_max_rss": "86412", "process_out_blocks": "16", "process_user_time": 1.524894}
+[0m23:44:46.448301 [debug] [MainThread]: Command `dbt run` failed at 23:44:46.448191 after 0.06 seconds
+[0m23:44:46.448672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ac44bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ab20cfa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f53ab20cc10>]}
+[0m23:44:46.449047 [debug] [MainThread]: Flushing usage events
+[0m23:44:47.060109 [debug] [MainThread]: An error was encountered while trying to flush usage events
