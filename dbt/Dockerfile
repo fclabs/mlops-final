@@ -19,5 +19,4 @@ RUN poetry install --no-ansi --no-root
 
 COPY src /code
 WORKDIR /code
-ENTRYPOINT [ "sleep" ,  "infinity" ]
 

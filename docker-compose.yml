@@ -43,6 +43,8 @@ services:
       - postgres
     networks:
       - postgres
+    restart: always
+    # workaround on missing sleep infinity
     command: [ "sleep", "infinity" ]
 
   dagster-db:

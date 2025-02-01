@@ -55,6 +55,9 @@ POSTGRES_USER=auser
 POSTGRES_PASSWORD=some_password
 PGADMIN_DEFAULT_EMAIL=admin@example.com
 PGADMIN_DEFAULT_PASSWORD=another_password
+# The IP address of the host where airbyte is running
+# You cannot use localhost.
+AIRBYTE_HOST=10.10.10.10
 ```
 
 # Run 

@@ -2,7 +2,6 @@ FROM dagster-base-image
 
 # Add code location code
 WORKDIR /opt/dagster/app
-COPY src/ .
 
 EXPOSE 4000
 
