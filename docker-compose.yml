@@ -45,7 +45,7 @@ services:
       - postgres
     command: [ "sleep", "infinity" ]
 
-  dagster_db:
+  dagster-db:
     image: postgres:latest
     env_file:
       - .env
@@ -57,6 +57,74 @@ services:
       - ./local-data/dagster_db/data:/var/lib/postgresql/data
     expose:
       - 5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U fede -d postgres" ]
+      interval: 10s
+      timeout: 8s
+      retries: 5
+
+  dagster-base-image:
+    build:
+      context: ./dagster
+      dockerfile: dockerfile-base-image.yml
+    image: dagster-base-image
+    restart: "no"
+    command: [ "/bin/true" ]
+
+  dagster-user-code:
+    build:
+      context: ./dagster
+      dockerfile: dockerfile-user-code.yml
+    image: dagster-user-code
+    restart: always
+    networks:
+      - dagster
+    env_file:
+      - .env
+    environment:
+      DAGSTER_POSTGRES_DB: "dagster"
+      DAGSTER_CURRENT_IMAGE: "dagster-user-code"
+    expose:
+      - 4000
+    volumes:
+      - ./dagster/src:/opt/dagster/app
+
+  dagster-webserver:
+    build:
+      context: ./dagster
+      dockerfile: dockerfile-webserver.yml
+    image: dagster-webserver
+    restart: always
+    depends_on:
+      - dagster-db
+    networks:
+      - dagster
+    entrypoint: [ "dagster-webserver", "-h", "0.0.0.0", "-p", "3000", "-w", "workspace.yaml" ]
+    volumes:
+      - ./dagster/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
+      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+    ports:
+      - "8030:3000"
+    expose:
+      - "3000"
+
+  dagster-daemon:
+    build:
+      context: ./dagster
+      dockerfile: dockerfile-webserver.yml
+    image: dagster-daemon
+    restart: on-failure
+    depends_on:
+      dagster-db:
+        condition: service_healthy
+      dagster-webserver:
+        condition: service_started
+    networks:
+      - dagster
+    volumes:
+      # Make docker client accessible so we can launch containers using host docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/io_manager_storage:/tmp/io_manager_storage
 
 networks:
   postgres:
