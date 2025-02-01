@@ -18,6 +18,9 @@ services:
       - "8080:80"
     env_file:
       - .env
+    volumes:
+      - ./local-data/pgadmin/var_lib:/var/lib/pgadmin
+      - ./local-data/pgadmin/server:/pgadmin4/servers.json
     depends_on:
       - postgres
     networks:
@@ -26,15 +29,14 @@ services:
   dbt:
     build: ./dbt
     image: dbt-postgres
-    volumes: 
+    volumes:
       - ./dbt/src:/code
       - /home/fede/.dbt/profiles.yml:/root/.dbt/profiles.yml
     depends_on:
       - postgres
     networks:
       - postgres
-    
-
+    command: [ "sleep", "infinity" ]
 
 networks:
   postgres:

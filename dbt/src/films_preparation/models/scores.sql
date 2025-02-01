@@ -4,4 +4,4 @@ SELECT
 	CAST( "user_id" as INT ) as user_id,
 	CAST( "movie_id" as INT ) as movie_id
 	
-FROM {{ source( 'source_tables', 'usuarios_csv' ) }}
+FROM {{ source( 'source_tables', 'scores_csv' ) }}
