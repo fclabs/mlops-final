@@ -6,4 +6,5 @@
 **/__pychache__
 
 # Local storage
-local-data
+local-data/
+!local-data/.gitkeep
