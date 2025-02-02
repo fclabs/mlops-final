@@ -73,7 +73,7 @@ services:
     restart: "no"
     command: [ "/bin/true" ]
 
-  dagster-user-code:
+  dagster-airbyte:
     build:
       context: ./dagster
       dockerfile: dockerfile-user-code.yml
@@ -89,7 +89,8 @@ services:
     expose:
       - 4000
     volumes:
-      - ./dagster/src:/opt/dagster/app
+      - dagster-shared:/opt/dagster/dagster_home
+      - ./dagster/src/airbyte:/opt/dagster/app
 
   dagster-webserver:
     build:
@@ -105,6 +106,7 @@ services:
     volumes:
       - ./dagster/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
       - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+      - dagster-shared:/opt/dagster/dagster_home
     ports:
       - "8030:3000"
     expose:
@@ -131,3 +133,7 @@ services:
 networks:
   postgres:
   dagster:
+
+
+volumes:
+  dagster-shared:

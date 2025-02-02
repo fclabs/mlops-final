@@ -1,4 +1,3 @@
-
 from dagster_airbyte import AirbyteResource, load_assets_from_airbyte_instance
 import os
 import dagster as dg
@@ -7,8 +6,8 @@ import dagster as dg
 airbyte_assets = load_assets_from_airbyte_instance(
     # Connect to your OSS Airbyte instance
     AirbyteResource(
-        host=os.environ.get('AIRBYTE_HOST', "localhost"),
-        port=os.environ.get('AIRBYTE_PORT', "8000"),
+        host=os.environ.get("AIRBYTE_HOST", "localhost"),
+        port=os.environ.get("AIRBYTE_PORT", "8000"),
     )
 )
 

@@ -1,5 +1,7 @@
 FROM dagster-base-image
 
+ENV DAGSTER_HOME=/opt/dagster/dagster_home/
+
 # Add code location code
 WORKDIR /opt/dagster/app
 
