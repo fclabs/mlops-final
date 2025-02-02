@@ -1,5 +1,0 @@
-load_from:
-  - grpc_server:
-      host: dagster-airbyte
-      port: 4000
-      location_name: "airbyte"

@@ -65,19 +65,10 @@ services:
       timeout: 8s
       retries: 5
 
-  dagster-base-image:
+  user-code-airbyte:
     build:
-      context: ./dagster
-      dockerfile: dockerfile-base-image.yml
-    image: dagster-base-image
-    restart: "no"
-    command: [ "/bin/true" ]
-
-  dagster-airbyte:
-    build:
-      context: ./dagster
-      dockerfile: dockerfile-user-code.yml
-    image: dagster-user-code
+      context: ./dagster/user-code-airbyte
+    image: user-code-airbyte
     restart: always
     networks:
       - dagster
@@ -85,17 +76,34 @@ services:
       - .env
     environment:
       DAGSTER_POSTGRES_DB: "dagster"
-      DAGSTER_CURRENT_IMAGE: "dagster-user-code"
+      DAGSTER_CURRENT_IMAGE: "user-code-airbyte"
     expose:
       - 4000
     volumes:
       - dagster-shared:/opt/dagster/dagster_home
-      - ./dagster/src/airbyte:/opt/dagster/app
+      - ./dagster/user-code-airbyte/src:/opt/dagster/app
+
+  user-code-mlflow:
+    build:
+      context: ./dagster/user-code-mlflow
+    image: user-code-mlflow
+    restart: always
+    networks:
+      - dagster
+    env_file:
+      - .env
+    environment:
+      DAGSTER_POSTGRES_DB: "dagster"
+      DAGSTER_CURRENT_IMAGE: "user-code-mlflow"
+    expose:
+      - 4000
+    volumes:
+      - dagster-shared:/opt/dagster/dagster_home
+      - ./dagster/user-code-mlflow/src:/opt/dagster/app
 
   dagster-webserver:
     build:
-      context: ./dagster
-      dockerfile: dockerfile-webserver.yml
+      context: ./dagster/server
     image: dagster-webserver
     restart: always
     depends_on:
@@ -104,8 +112,8 @@ services:
       - dagster
     entrypoint: [ "dagster-webserver", "-h", "0.0.0.0", "-p", "3000", "-w", "workspace.yaml" ]
     volumes:
-      - ./dagster/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
-      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+      - ./dagster/server/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
+      - ./dagster/server/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
       - dagster-shared:/opt/dagster/dagster_home
     ports:
       - "8030:3000"
@@ -114,8 +122,7 @@ services:
 
   dagster-daemon:
     build:
-      context: ./dagster
-      dockerfile: dockerfile-webserver.yml
+      context: ./dagster/server
     image: dagster-daemon
     restart: on-failure
     entrypoint:
@@ -129,8 +136,8 @@ services:
     networks:
       - dagster
     volumes:
-      - ./dagster/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
-      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+      - ./dagster/server/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
+      - ./dagster/server/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
       # Make docker client accessible so we can launch containers using host docker
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/io_manager_storage:/tmp/io_manager_storage
@@ -143,6 +150,8 @@ services:
     image: mlflow-server
     ports:
       - "8040:8080"
+    expose:
+      - "8080"
     networks:
       - dagster
       - postgres

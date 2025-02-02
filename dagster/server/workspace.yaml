@@ -1,0 +1,9 @@
+load_from:
+  - grpc_server:
+      host: user-code-airbyte
+      port: 4000
+      location_name: "airbyte"
+  - grpc_server:
+      host: user-code-mlflow
+      port: 4000
+      location_name: "mlflow"

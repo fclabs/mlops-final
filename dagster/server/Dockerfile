@@ -15,10 +15,9 @@ RUN apt-get update && \
     curl -sSL https://install.python-poetry.org | python3 -
 
 COPY pyproject.toml .
-RUN poetry install --no-ansi --no-root
+RUN poetry install --no-ansi --no-root --without dev
 
-# Set $DAGSTER_HOME and copy dagster.yaml and workspace.yaml there
 ENV DAGSTER_HOME=/opt/dagster/dagster_home/
-
 RUN mkdir -p $DAGSTER_HOME
 
+WORKDIR $DAGSTER_HOME
