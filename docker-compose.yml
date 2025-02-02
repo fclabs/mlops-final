@@ -118,6 +118,9 @@ services:
       dockerfile: dockerfile-webserver.yml
     image: dagster-daemon
     restart: on-failure
+    entrypoint:
+      - dagster-daemon
+      - run
     depends_on:
       dagster-db:
         condition: service_healthy
@@ -126,9 +129,12 @@ services:
     networks:
       - dagster
     volumes:
+      - ./dagster/workspace.yaml:/opt/dagster/dagster_home/workspace.yaml
+      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
       # Make docker client accessible so we can launch containers using host docker
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/io_manager_storage:/tmp/io_manager_storage
+      - dagster-shared:/opt/dagster/dagster_home
 
 networks:
   postgres:
