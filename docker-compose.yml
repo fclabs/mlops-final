@@ -136,6 +136,17 @@ services:
       - /tmp/io_manager_storage:/tmp/io_manager_storage
       - dagster-shared:/opt/dagster/dagster_home
 
+  mlflow-server:
+    build:
+      context: ./mlflow
+      dockerfile: Dockerfile
+    image: mlflow-server
+    ports:
+      - "8040:8080"
+    networks:
+      - dagster
+      - postgres
+
 networks:
   postgres:
   dagster:
