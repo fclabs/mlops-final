@@ -1,0 +1,22 @@
+[project]
+name = "user-code-dbt"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Federico Castañeda",email = "fedecasta@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dagster (>=1.9.11,<2.0.0)",
+    "dagster-dbt (>=0.25.11,<0.26.0)",
+    "dbt-postgres (>=1.9.0,<2.0.0)"
+]
+
+[tool.poetry.group.dev.dependencies]
+dagster-webserver = "^1.9.11"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+

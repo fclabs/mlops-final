@@ -101,6 +101,26 @@ services:
       - dagster-shared:/opt/dagster/dagster_home
       - ./dagster/user-code-mlflow/src:/opt/dagster/app
 
+  user-code-dbt:
+    build:
+      context: ./dagster/user-code-dbt
+    image: user-code-dbt
+    restart: always
+    networks:
+      - dagster
+      - postgres
+    env_file:
+      - .env
+    environment:
+      DAGSTER_POSTGRES_DB: "dagster"
+      DAGSTER_CURRENT_IMAGE: "user-code-dbt"
+    expose:
+      - 4000
+    volumes:
+      - dagster-shared:/opt/dagster/dagster_home
+      - ./dagster/user-code-dbt/src:/opt/dagster/app
+      - /home/fede/.dbt/profiles.yml:/root/.dbt/profiles.yml
+
   dagster-webserver:
     build:
       context: ./dagster/server

@@ -1,0 +1,21 @@
+
+version: 2
+
+sources:
+  - name: source_tables
+    description: "Tables imported from CSV"
+    database: mlops
+    schema: source_csv
+    tables:
+      - name: peliculas_csv
+        meta:
+          dagster:
+            asset_key: ["external_sources" , "peliculas_csv"]
+      - name: scores_csv
+        meta:
+          dagster:
+            asset_key: ["external_sources" , "scores_csv"]
+      - name: usuarios_csv
+        meta:
+          dagster:
+            asset_key: ["external_sources" , "usuarios_csv"]

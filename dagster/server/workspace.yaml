@@ -7,3 +7,7 @@ load_from:
       host: user-code-mlflow
       port: 4000
       location_name: "mlflow"
+  - grpc_server:
+      host: user-code-dbt
+      port: 4000
+      location_name: "dbt"

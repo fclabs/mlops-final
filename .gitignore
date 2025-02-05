@@ -4,6 +4,7 @@
 **/poetry.lock
 
 **/__pychache__
+dagster/user-code-dbt/src/dbt-project/target/
 
 # Local storage
 local-data/
