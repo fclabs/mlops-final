@@ -90,6 +90,7 @@ services:
     restart: always
     networks:
       - dagster
+      - postgres
     env_file:
       - .env
     environment:
