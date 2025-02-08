@@ -1679,3 +1679,1266 @@ Database Error
 [0m22:20:44.885398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7a74d5a120>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7a783fc080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7a71a0e000>]}
 [0m22:20:44.886394 [debug] [MainThread]: Flushing usage events
 [0m22:20:45.609214 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:49:12.916135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10d014d340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10d0007170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10cfe9ab40>]}
+
+
+============================== 22:49:12.920091 | 4957feea-1669-4866-bc63-c8f554013f1d ==============================
+[0m22:49:12.920091 [info ] [MainThread]: Running with dbt=1.9.2
+[0m22:49:12.920832 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/fede/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/fede/mlops/dagster/user-code-dbt/src/dbt-project/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt build', 'send_anonymous_usage_stats': 'True'}
+[0m22:49:13.174604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4957feea-1669-4866-bc63-c8f554013f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10d0c62a20>]}
+[0m22:49:13.276363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4957feea-1669-4866-bc63-c8f554013f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10d0221a60>]}
+[0m22:49:13.277452 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m22:49:13.389098 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m22:49:13.494422 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m22:49:13.495131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4957feea-1669-4866-bc63-c8f554013f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10ce77ab70>]}
+[0m22:49:14.972996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4957feea-1669-4866-bc63-c8f554013f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10cdf15a60>]}
+[0m22:49:15.112799 [debug] [MainThread]: Wrote artifact WritableManifest to /home/fede/mlops/dagster/user-code-dbt/src/dbt-project/target/manifest.json
+[0m22:49:15.115875 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/fede/mlops/dagster/user-code-dbt/src/dbt-project/target/semantic_manifest.json
+[0m22:49:15.149370 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4957feea-1669-4866-bc63-c8f554013f1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10cdf51250>]}
+[0m22:49:15.149977 [info ] [MainThread]: Found 4 models, 3 sources, 431 macros
+[0m22:49:15.152575 [info ] [MainThread]: 
+[0m22:49:15.153194 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:49:15.153698 [info ] [MainThread]: 
+[0m22:49:15.154317 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m22:49:15.160428 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mlops'
+[0m22:49:15.219055 [debug] [ThreadPool]: Using postgres connection "list_mlops"
+[0m22:49:15.219649 [debug] [ThreadPool]: On list_mlops: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:49:15.220065 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:49:15.238807 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+could not translate host name "postgres" to address: Temporary failure in name resolution
+
+[0m22:49:15.246838 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:49:15.247322 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m22:49:15.247780 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m22:49:15.248155 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m22:49:15.248549 [debug] [ThreadPool]: On list_mlops: No close available on handle
+[0m22:49:15.249605 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:49:15.249988 [debug] [MainThread]: Connection 'list_mlops' was properly closed.
+[0m22:49:15.250370 [info ] [MainThread]: 
+[0m22:49:15.250963 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.10 seconds (0.10s).
+[0m22:49:15.251593 [error] [MainThread]: Encountered an error:
+Database Error
+  could not translate host name "postgres" to address: Temporary failure in name resolution
+  
+[0m22:49:15.252675 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 2.4591463, "process_in_blocks": "376", "process_kernel_time": 0.308446, "process_mem_max_rss": "114780", "process_out_blocks": "1736", "process_user_time": 4.206198}
+[0m22:49:15.253187 [debug] [MainThread]: Command `dbt build` failed at 22:49:15.253065 after 2.46 seconds
+[0m22:49:15.253663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10d1bc6420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10ce75fad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f10cf30f800>]}
+[0m22:49:15.254093 [debug] [MainThread]: Flushing usage events
+[0m22:49:16.045853 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:40:28.122406 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986f8c9df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986f8c9eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986f8ca2d0>]}
+
+
+============================== 20:40:28.126526 | ea316033-ee0b-4eaa-aec3-5366dd917902 ==============================
+[0m20:40:28.126526 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:40:28.127228 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/dagster/app/dbt-project/logs', 'version_check': 'True', 'profiles_dir': '/root/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt build', 'send_anonymous_usage_stats': 'True'}
+[0m20:40:28.360215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986eb281d0>]}
+[0m20:40:28.467686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986fcfaae0>]}
+[0m20:40:28.468800 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m20:40:28.577520 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:40:28.697246 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m20:40:28.698230 [debug] [MainThread]: Partial parsing: updated file: films_preparation://models/schema.yml
+[0m20:40:29.265788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986d7ac140>]}
+[0m20:40:29.343451 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:40:29.346574 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:40:29.380195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986df493a0>]}
+[0m20:40:29.380714 [info ] [MainThread]: Found 4 models, 3 sources, 431 macros
+[0m20:40:29.383057 [info ] [MainThread]: 
+[0m20:40:29.383538 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:40:29.383949 [info ] [MainThread]: 
+[0m20:40:29.384545 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:40:29.389202 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mlops'
+[0m20:40:29.430247 [debug] [ThreadPool]: Using postgres connection "list_mlops"
+[0m20:40:29.430801 [debug] [ThreadPool]: On list_mlops: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:40:29.431231 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:40:29.441240 [debug] [ThreadPool]: SQL status: SELECT 61 in 0.010 seconds
+[0m20:40:29.442933 [debug] [ThreadPool]: On list_mlops: Close
+[0m20:40:29.445196 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mlops, now list_mlops_after_dbt)
+[0m20:40:29.453787 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:40:29.454182 [debug] [ThreadPool]: On list_mlops_after_dbt: BEGIN
+[0m20:40:29.454609 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:40:29.462631 [debug] [ThreadPool]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.463022 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:40:29.463689 [debug] [ThreadPool]: On list_mlops_after_dbt: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops_after_dbt"} */
+select
+      'mlops' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'after_dbt'
+  
+[0m20:40:29.467208 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.003 seconds
+[0m20:40:29.468799 [debug] [ThreadPool]: On list_mlops_after_dbt: ROLLBACK
+[0m20:40:29.469419 [debug] [ThreadPool]: On list_mlops_after_dbt: Close
+[0m20:40:29.476761 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.477217 [debug] [MainThread]: On master: BEGIN
+[0m20:40:29.477649 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:40:29.485756 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.486271 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.486752 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:40:29.490177 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m20:40:29.491713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986c76af60>]}
+[0m20:40:29.492275 [debug] [MainThread]: On master: ROLLBACK
+[0m20:40:29.492876 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.493284 [debug] [MainThread]: On master: BEGIN
+[0m20:40:29.493937 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m20:40:29.494351 [debug] [MainThread]: On master: COMMIT
+[0m20:40:29.494752 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.495137 [debug] [MainThread]: On master: COMMIT
+[0m20:40:29.495617 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:40:29.496028 [debug] [MainThread]: On master: Close
+[0m20:40:29.499371 [debug] [Thread-1 (]: Began running node model.films_preparation.peliculas
+[0m20:40:29.499892 [info ] [Thread-1 (]: 1 of 4 START sql table model after_dbt.peliculas ............................... [RUN]
+[0m20:40:29.500705 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mlops_after_dbt, now model.films_preparation.peliculas)
+[0m20:40:29.501123 [debug] [Thread-1 (]: Began compiling node model.films_preparation.peliculas
+[0m20:40:29.512283 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.peliculas"
+[0m20:40:29.513330 [debug] [Thread-1 (]: Began executing node model.films_preparation.peliculas
+[0m20:40:29.561301 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.peliculas"
+[0m20:40:29.562491 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.563009 [debug] [Thread-1 (]: On model.films_preparation.peliculas: BEGIN
+[0m20:40:29.563444 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:40:29.571353 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.571927 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.572442 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."peliculas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST( "id" as INT ) as movie_id,
+	"Name" as name,
+	CAST( CAST("War" as INT) as  BOOL ) as war,
+	CAST( CAST("Crime" as INT) as  BOOL ) as crime,
+	CAST( CAST("Drama" as INT) as  BOOL ) as drama,
+	CAST( CAST("Action" as INT) as  BOOL ) as "action",
+	CAST( CAST("Comedy" as INT) as  BOOL ) as comedy,
+	CAST( CAST("Horror" as INT) as  BOOL ) as horror,
+	CAST( CAST("Sci_Fi" as INT) as  BOOL ) as sci_fi,
+	CAST( CAST("Fantasy" as INT) as  BOOL ) as fantasy,
+	CAST( CAST("Musical" as INT) as  BOOL ) as musical,
+	CAST( CAST("Mystery" as INT) as  BOOL ) as mystery,
+	CAST( CAST("Romance" as INT) as  BOOL ) as romance,
+	CAST( CAST("Western" as INT) as  BOOL ) as western,
+	CAST( CAST("unknown" as INT) as  BOOL ) as "unknown",
+	CAST( CAST("Thriller" as INT) as  BOOL ) as thriller,
+	CAST( CAST("Adventure" as INT) as  BOOL ) as adventure,
+	CAST( CAST("Animation" as INT) as  BOOL ) as animation,
+	CAST( CAST("Film_Noir" as INT) as  BOOL ) as film_noir,
+	CAST( CAST("Children_s" as INT) as  BOOL ) as childrens,
+	CAST( CAST("Documentary" as INT) as  BOOL ) as documentary,
+	TO_DATE("Release_Date", 'YY-MM-DD') as release_date
+FROM "mlops"."source_csv"."peliculas_csv"
+  );
+  
+[0m20:40:29.581723 [debug] [Thread-1 (]: SQL status: SELECT 1344 in 0.009 seconds
+[0m20:40:29.588761 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.589292 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas" rename to "peliculas__dbt_backup"
+[0m20:40:29.590229 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.593693 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.594208 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas__dbt_tmp" rename to "peliculas"
+[0m20:40:29.595104 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.617092 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:40:29.617706 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.618155 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:40:29.620854 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m20:40:29.627518 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."peliculas__dbt_backup"
+[0m20:40:29.633131 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:40:29.633637 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+drop table if exists "mlops"."after_dbt"."peliculas__dbt_backup" cascade
+[0m20:40:29.637462 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m20:40:29.640225 [debug] [Thread-1 (]: On model.films_preparation.peliculas: Close
+[0m20:40:29.642009 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f98715ba360>]}
+[0m20:40:29.642772 [info ] [Thread-1 (]: 1 of 4 OK created sql table model after_dbt.peliculas .......................... [[32mSELECT 1344[0m in 0.14s]
+[0m20:40:29.643600 [debug] [Thread-1 (]: Finished running node model.films_preparation.peliculas
+[0m20:40:29.644096 [debug] [Thread-1 (]: Began running node model.films_preparation.scores
+[0m20:40:29.644698 [info ] [Thread-1 (]: 2 of 4 START sql table model after_dbt.scores .................................. [RUN]
+[0m20:40:29.645316 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.peliculas, now model.films_preparation.scores)
+[0m20:40:29.645788 [debug] [Thread-1 (]: Began compiling node model.films_preparation.scores
+[0m20:40:29.649134 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.scores"
+[0m20:40:29.650487 [debug] [Thread-1 (]: Began executing node model.films_preparation.scores
+[0m20:40:29.655531 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.scores"
+[0m20:40:29.656493 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.656972 [debug] [Thread-1 (]: On model.films_preparation.scores: BEGIN
+[0m20:40:29.657429 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:40:29.665493 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.666070 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.666550 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."scores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	TO_DATE( "Date" , 'YY-MM-DD') as rating_date,
+	CAST( "rating" as INT ) as rating,
+	CAST( "user_id" as INT ) as user_id,
+	CAST( "movie_id" as INT ) as movie_id
+	
+FROM "mlops"."source_csv"."scores_csv"
+  );
+  
+[0m20:40:29.697401 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.030 seconds
+[0m20:40:29.701380 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.701920 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores" rename to "scores__dbt_backup"
+[0m20:40:29.703054 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:40:29.706260 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.706748 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores__dbt_tmp" rename to "scores"
+[0m20:40:29.707415 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.709422 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:40:29.709958 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.710363 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:40:29.717768 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m20:40:29.720394 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."scores__dbt_backup"
+[0m20:40:29.721294 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:40:29.721721 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+drop table if exists "mlops"."after_dbt"."scores__dbt_backup" cascade
+[0m20:40:29.724379 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:40:29.726109 [debug] [Thread-1 (]: On model.films_preparation.scores: Close
+[0m20:40:29.726870 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986c2bc9b0>]}
+[0m20:40:29.728136 [info ] [Thread-1 (]: 2 of 4 OK created sql table model after_dbt.scores ............................. [[32mSELECT 25000[0m in 0.08s]
+[0m20:40:29.730143 [debug] [Thread-1 (]: Finished running node model.films_preparation.scores
+[0m20:40:29.731027 [debug] [Thread-1 (]: Began running node model.films_preparation.usuarios
+[0m20:40:29.731667 [info ] [Thread-1 (]: 3 of 4 START sql table model after_dbt.usuarios ................................ [RUN]
+[0m20:40:29.732412 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.scores, now model.films_preparation.usuarios)
+[0m20:40:29.732807 [debug] [Thread-1 (]: Began compiling node model.films_preparation.usuarios
+[0m20:40:29.736223 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.usuarios"
+[0m20:40:29.737007 [debug] [Thread-1 (]: Began executing node model.films_preparation.usuarios
+[0m20:40:29.740821 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.usuarios"
+[0m20:40:29.741633 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.742006 [debug] [Thread-1 (]: On model.films_preparation.usuarios: BEGIN
+[0m20:40:29.742353 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:40:29.749916 [debug] [Thread-1 (]: SQL status: BEGIN in 0.007 seconds
+[0m20:40:29.750343 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.750717 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."usuarios__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST("id" as INT) as user_id,
+	"Occupation" as occupation ,
+	TO_DATE("Active_Since", 'YY-MM-DD') as active_since
+FROM "mlops"."source_csv"."usuarios_csv"
+  );
+  
+[0m20:40:29.753647 [debug] [Thread-1 (]: SQL status: SELECT 377 in 0.002 seconds
+[0m20:40:29.757625 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.758034 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios" rename to "usuarios__dbt_backup"
+[0m20:40:29.758761 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.762187 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.762724 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios__dbt_tmp" rename to "usuarios"
+[0m20:40:29.763360 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.765135 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:40:29.765705 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.766126 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:40:29.768484 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m20:40:29.771569 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."usuarios__dbt_backup"
+[0m20:40:29.772287 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:40:29.772905 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+drop table if exists "mlops"."after_dbt"."usuarios__dbt_backup" cascade
+[0m20:40:29.775759 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:40:29.777364 [debug] [Thread-1 (]: On model.films_preparation.usuarios: Close
+[0m20:40:29.778281 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986c26cef0>]}
+[0m20:40:29.779504 [info ] [Thread-1 (]: 3 of 4 OK created sql table model after_dbt.usuarios ........................... [[32mSELECT 377[0m in 0.05s]
+[0m20:40:29.781071 [debug] [Thread-1 (]: Finished running node model.films_preparation.usuarios
+[0m20:40:29.782345 [debug] [Thread-1 (]: Began running node model.films_preparation.unified_films
+[0m20:40:29.782865 [info ] [Thread-1 (]: 4 of 4 START sql table model after_dbt.unified_films ........................... [RUN]
+[0m20:40:29.783719 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.usuarios, now model.films_preparation.unified_films)
+[0m20:40:29.784082 [debug] [Thread-1 (]: Began compiling node model.films_preparation.unified_films
+[0m20:40:29.787771 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.unified_films"
+[0m20:40:29.788481 [debug] [Thread-1 (]: Began executing node model.films_preparation.unified_films
+[0m20:40:29.791992 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.unified_films"
+[0m20:40:29.792823 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.793184 [debug] [Thread-1 (]: On model.films_preparation.unified_films: BEGIN
+[0m20:40:29.793648 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:40:29.801798 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.802237 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.802665 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."unified_films__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	movie_id, name, war, crime, drama, "action", comedy,
+	horror, sci_fi, fantasy, musical, mystery, romance,
+	western, "unknown", thriller, adventure, animation,
+	film_noir, childrens, documentary, release_date,
+    u.occupation, u.active_since,
+    s.rating_date, s.rating
+FROM "mlops"."after_dbt"."peliculas" as p
+INNER JOIN "mlops"."after_dbt"."scores" as s USING(movie_id)
+INNER JOIN "mlops"."after_dbt"."usuarios" as u USING(user_id)
+  );
+  
+[0m20:40:29.852288 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.049 seconds
+[0m20:40:29.857432 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.858159 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films" rename to "unified_films__dbt_backup"
+[0m20:40:29.859236 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.864520 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.864963 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films__dbt_tmp" rename to "unified_films"
+[0m20:40:29.865790 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:40:29.867593 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:40:29.867983 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.868321 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:40:29.881787 [debug] [Thread-1 (]: SQL status: COMMIT in 0.013 seconds
+[0m20:40:29.884425 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."unified_films__dbt_backup"
+[0m20:40:29.885181 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:40:29.885544 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+drop table if exists "mlops"."after_dbt"."unified_films__dbt_backup" cascade
+[0m20:40:29.888837 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m20:40:29.890319 [debug] [Thread-1 (]: On model.films_preparation.unified_films: Close
+[0m20:40:29.891133 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ea316033-ee0b-4eaa-aec3-5366dd917902', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986c29c920>]}
+[0m20:40:29.892210 [info ] [Thread-1 (]: 4 of 4 OK created sql table model after_dbt.unified_films ...................... [[32mSELECT 25000[0m in 0.11s]
+[0m20:40:29.893752 [debug] [Thread-1 (]: Finished running node model.films_preparation.unified_films
+[0m20:40:29.895661 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.896108 [debug] [MainThread]: On master: BEGIN
+[0m20:40:29.896536 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:40:29.904994 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:40:29.905505 [debug] [MainThread]: On master: COMMIT
+[0m20:40:29.905961 [debug] [MainThread]: Using postgres connection "master"
+[0m20:40:29.906347 [debug] [MainThread]: On master: COMMIT
+[0m20:40:29.906922 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:40:29.907316 [debug] [MainThread]: On master: Close
+[0m20:40:29.907905 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:40:29.908298 [debug] [MainThread]: Connection 'model.films_preparation.unified_films' was properly closed.
+[0m20:40:29.908829 [info ] [MainThread]: 
+[0m20:40:29.909406 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.52 seconds (0.52s).
+[0m20:40:29.910886 [debug] [MainThread]: Command end result
+[0m20:40:29.940192 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:40:29.942305 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:40:29.949175 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/dagster/app/dbt-project/target/run_results.json
+[0m20:40:29.949703 [info ] [MainThread]: 
+[0m20:40:29.950296 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:40:29.950763 [info ] [MainThread]: 
+[0m20:40:29.951404 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m20:40:29.952659 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 1.9359792, "process_in_blocks": "0", "process_kernel_time": 0.448949, "process_mem_max_rss": "119792", "process_out_blocks": "2704", "process_user_time": 2.806031}
+[0m20:40:29.953233 [debug] [MainThread]: Command `dbt build` succeeded at 20:40:29.953119 after 1.94 seconds
+[0m20:40:29.953719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986f8c9df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986c4940b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f986db81400>]}
+[0m20:40:29.954240 [debug] [MainThread]: Flushing usage events
+[0m20:40:31.023418 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:43:39.757684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b15f2720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b11beb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b1460c50>]}
+
+
+============================== 20:43:39.761320 | 1fd60d31-8fb2-41e5-95aa-7a40f47854fa ==============================
+[0m20:43:39.761320 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:43:39.762338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/root/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/opt/dagster/app/dbt-project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt build', 'send_anonymous_usage_stats': 'True'}
+[0m20:43:40.002364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b114e360>]}
+[0m20:43:40.099729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b182a630>]}
+[0m20:43:40.100780 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m20:43:40.211330 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:43:40.212218 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m20:43:40.212677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b075aba0>]}
+[0m20:43:41.633949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b0703c80>]}
+[0m20:43:41.717412 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:43:41.720646 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:43:41.804208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02af38f080>]}
+[0m20:43:41.804807 [info ] [MainThread]: Found 4 models, 3 sources, 431 macros
+[0m20:43:41.807226 [info ] [MainThread]: 
+[0m20:43:41.807735 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:43:41.808173 [info ] [MainThread]: 
+[0m20:43:41.808923 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:43:41.814018 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mlops'
+[0m20:43:41.857376 [debug] [ThreadPool]: Using postgres connection "list_mlops"
+[0m20:43:41.858361 [debug] [ThreadPool]: On list_mlops: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:43:41.859464 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:43:41.869821 [debug] [ThreadPool]: SQL status: SELECT 61 in 0.010 seconds
+[0m20:43:41.871695 [debug] [ThreadPool]: On list_mlops: Close
+[0m20:43:41.873745 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mlops, now list_mlops_after_dbt)
+[0m20:43:41.880968 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:43:41.881784 [debug] [ThreadPool]: On list_mlops_after_dbt: BEGIN
+[0m20:43:41.882296 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:43:41.891560 [debug] [ThreadPool]: SQL status: BEGIN in 0.009 seconds
+[0m20:43:41.892107 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:43:41.892611 [debug] [ThreadPool]: On list_mlops_after_dbt: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops_after_dbt"} */
+select
+      'mlops' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'after_dbt'
+  
+[0m20:43:41.895589 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.003 seconds
+[0m20:43:41.897109 [debug] [ThreadPool]: On list_mlops_after_dbt: ROLLBACK
+[0m20:43:41.898014 [debug] [ThreadPool]: On list_mlops_after_dbt: Close
+[0m20:43:41.904306 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:41.904851 [debug] [MainThread]: On master: BEGIN
+[0m20:43:41.905210 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:43:41.912956 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:43:41.913472 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:41.913945 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:43:41.916891 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m20:43:41.918495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02ad84e2a0>]}
+[0m20:43:41.919009 [debug] [MainThread]: On master: ROLLBACK
+[0m20:43:41.919555 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:41.919895 [debug] [MainThread]: On master: BEGIN
+[0m20:43:41.920667 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m20:43:41.921608 [debug] [MainThread]: On master: COMMIT
+[0m20:43:41.922096 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:41.922664 [debug] [MainThread]: On master: COMMIT
+[0m20:43:41.923265 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:43:41.923876 [debug] [MainThread]: On master: Close
+[0m20:43:41.925974 [debug] [Thread-1 (]: Began running node model.films_preparation.peliculas
+[0m20:43:41.926730 [info ] [Thread-1 (]: 1 of 4 START sql table model after_dbt.peliculas ............................... [RUN]
+[0m20:43:41.927364 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mlops_after_dbt, now model.films_preparation.peliculas)
+[0m20:43:41.927766 [debug] [Thread-1 (]: Began compiling node model.films_preparation.peliculas
+[0m20:43:41.938235 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.peliculas"
+[0m20:43:41.939050 [debug] [Thread-1 (]: Began executing node model.films_preparation.peliculas
+[0m20:43:41.987929 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.peliculas"
+[0m20:43:41.989656 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:41.990223 [debug] [Thread-1 (]: On model.films_preparation.peliculas: BEGIN
+[0m20:43:41.990754 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:41.999350 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:43:42.000013 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:42.000611 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."peliculas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST( "id" as INT ) as movie_id,
+	"Name" as name,
+	CAST( CAST("War" as INT) as  BOOL ) as war,
+	CAST( CAST("Crime" as INT) as  BOOL ) as crime,
+	CAST( CAST("Drama" as INT) as  BOOL ) as drama,
+	CAST( CAST("Action" as INT) as  BOOL ) as "action",
+	CAST( CAST("Comedy" as INT) as  BOOL ) as comedy,
+	CAST( CAST("Horror" as INT) as  BOOL ) as horror,
+	CAST( CAST("Sci_Fi" as INT) as  BOOL ) as sci_fi,
+	CAST( CAST("Fantasy" as INT) as  BOOL ) as fantasy,
+	CAST( CAST("Musical" as INT) as  BOOL ) as musical,
+	CAST( CAST("Mystery" as INT) as  BOOL ) as mystery,
+	CAST( CAST("Romance" as INT) as  BOOL ) as romance,
+	CAST( CAST("Western" as INT) as  BOOL ) as western,
+	CAST( CAST("unknown" as INT) as  BOOL ) as "unknown",
+	CAST( CAST("Thriller" as INT) as  BOOL ) as thriller,
+	CAST( CAST("Adventure" as INT) as  BOOL ) as adventure,
+	CAST( CAST("Animation" as INT) as  BOOL ) as animation,
+	CAST( CAST("Film_Noir" as INT) as  BOOL ) as film_noir,
+	CAST( CAST("Children_s" as INT) as  BOOL ) as childrens,
+	CAST( CAST("Documentary" as INT) as  BOOL ) as documentary,
+	TO_DATE("Release_Date", 'YY-MM-DD') as release_date
+FROM "mlops"."source_csv"."peliculas_csv"
+  );
+  
+[0m20:43:42.007265 [debug] [Thread-1 (]: SQL status: SELECT 1344 in 0.006 seconds
+[0m20:43:42.014797 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:42.015466 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas" rename to "peliculas__dbt_backup"
+[0m20:43:42.016404 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.019721 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:42.020234 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas__dbt_tmp" rename to "peliculas"
+[0m20:43:42.021024 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.046685 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:43:42.047286 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:42.047893 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:43:42.051102 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m20:43:42.061120 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."peliculas__dbt_backup"
+[0m20:43:42.069771 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:43:42.070326 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+drop table if exists "mlops"."after_dbt"."peliculas__dbt_backup" cascade
+[0m20:43:42.073481 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m20:43:42.076232 [debug] [Thread-1 (]: On model.films_preparation.peliculas: Close
+[0m20:43:42.078488 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02af380050>]}
+[0m20:43:42.079275 [info ] [Thread-1 (]: 1 of 4 OK created sql table model after_dbt.peliculas .......................... [[32mSELECT 1344[0m in 0.15s]
+[0m20:43:42.080337 [debug] [Thread-1 (]: Finished running node model.films_preparation.peliculas
+[0m20:43:42.080881 [debug] [Thread-1 (]: Began running node model.films_preparation.scores
+[0m20:43:42.081682 [info ] [Thread-1 (]: 2 of 4 START sql table model after_dbt.scores .................................. [RUN]
+[0m20:43:42.082461 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.peliculas, now model.films_preparation.scores)
+[0m20:43:42.082908 [debug] [Thread-1 (]: Began compiling node model.films_preparation.scores
+[0m20:43:42.086242 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.scores"
+[0m20:43:42.086928 [debug] [Thread-1 (]: Began executing node model.films_preparation.scores
+[0m20:43:42.091479 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.scores"
+[0m20:43:42.092151 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.092633 [debug] [Thread-1 (]: On model.films_preparation.scores: BEGIN
+[0m20:43:42.093041 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:42.101531 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:43:42.102141 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.102669 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."scores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	TO_DATE( "Date" , 'YY-MM-DD') as rating_date,
+	CAST( "rating" as INT ) as rating,
+	CAST( "user_id" as INT ) as user_id,
+	CAST( "movie_id" as INT ) as movie_id
+	
+FROM "mlops"."source_csv"."scores_csv"
+  );
+  
+[0m20:43:42.127965 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.025 seconds
+[0m20:43:42.132295 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.132765 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores" rename to "scores__dbt_backup"
+[0m20:43:42.133801 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:43:42.138678 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.139194 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores__dbt_tmp" rename to "scores"
+[0m20:43:42.140022 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.143600 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:43:42.144060 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.144525 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:43:42.154070 [debug] [Thread-1 (]: SQL status: COMMIT in 0.009 seconds
+[0m20:43:42.161634 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."scores__dbt_backup"
+[0m20:43:42.162621 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:43:42.163136 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+drop table if exists "mlops"."after_dbt"."scores__dbt_backup" cascade
+[0m20:43:42.166055 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:43:42.168601 [debug] [Thread-1 (]: On model.films_preparation.scores: Close
+[0m20:43:42.170004 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02a7f181d0>]}
+[0m20:43:42.171198 [info ] [Thread-1 (]: 2 of 4 OK created sql table model after_dbt.scores ............................. [[32mSELECT 25000[0m in 0.09s]
+[0m20:43:42.172502 [debug] [Thread-1 (]: Finished running node model.films_preparation.scores
+[0m20:43:42.173362 [debug] [Thread-1 (]: Began running node model.films_preparation.usuarios
+[0m20:43:42.175778 [info ] [Thread-1 (]: 3 of 4 START sql table model after_dbt.usuarios ................................ [RUN]
+[0m20:43:42.177363 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.scores, now model.films_preparation.usuarios)
+[0m20:43:42.178353 [debug] [Thread-1 (]: Began compiling node model.films_preparation.usuarios
+[0m20:43:42.183797 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.usuarios"
+[0m20:43:42.185329 [debug] [Thread-1 (]: Began executing node model.films_preparation.usuarios
+[0m20:43:42.194505 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.usuarios"
+[0m20:43:42.195829 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.197787 [debug] [Thread-1 (]: On model.films_preparation.usuarios: BEGIN
+[0m20:43:42.198691 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:42.210162 [debug] [Thread-1 (]: SQL status: BEGIN in 0.011 seconds
+[0m20:43:42.211284 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.212171 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."usuarios__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST("id" as INT) as user_id,
+	"Occupation" as occupation ,
+	TO_DATE("Active_Since", 'YY-MM-DD') as active_since
+FROM "mlops"."source_csv"."usuarios_csv"
+  );
+  
+[0m20:43:42.216131 [debug] [Thread-1 (]: SQL status: SELECT 377 in 0.003 seconds
+[0m20:43:42.221319 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.222113 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios" rename to "usuarios__dbt_backup"
+[0m20:43:42.223036 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.226696 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.227204 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios__dbt_tmp" rename to "usuarios"
+[0m20:43:42.227994 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.229918 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:43:42.230429 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.230911 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:43:42.232731 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:43:42.235689 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."usuarios__dbt_backup"
+[0m20:43:42.236549 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:43:42.237105 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+drop table if exists "mlops"."after_dbt"."usuarios__dbt_backup" cascade
+[0m20:43:42.239681 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:43:42.241680 [debug] [Thread-1 (]: On model.films_preparation.usuarios: Close
+[0m20:43:42.242559 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02ad905130>]}
+[0m20:43:42.243361 [info ] [Thread-1 (]: 3 of 4 OK created sql table model after_dbt.usuarios ........................... [[32mSELECT 377[0m in 0.07s]
+[0m20:43:42.244274 [debug] [Thread-1 (]: Finished running node model.films_preparation.usuarios
+[0m20:43:42.245700 [debug] [Thread-1 (]: Began running node model.films_preparation.unified_films
+[0m20:43:42.246297 [info ] [Thread-1 (]: 4 of 4 START sql table model after_dbt.unified_films ........................... [RUN]
+[0m20:43:42.247202 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.usuarios, now model.films_preparation.unified_films)
+[0m20:43:42.247719 [debug] [Thread-1 (]: Began compiling node model.films_preparation.unified_films
+[0m20:43:42.251968 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.unified_films"
+[0m20:43:42.252610 [debug] [Thread-1 (]: Began executing node model.films_preparation.unified_films
+[0m20:43:42.256796 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.unified_films"
+[0m20:43:42.257867 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.258338 [debug] [Thread-1 (]: On model.films_preparation.unified_films: BEGIN
+[0m20:43:42.258819 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:43:42.267479 [debug] [Thread-1 (]: SQL status: BEGIN in 0.009 seconds
+[0m20:43:42.268215 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.268787 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."unified_films__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	movie_id, name, war, crime, drama, "action", comedy,
+	horror, sci_fi, fantasy, musical, mystery, romance,
+	western, "unknown", thriller, adventure, animation,
+	film_noir, childrens, documentary, release_date,
+    u.occupation, u.active_since,
+    s.rating_date, s.rating
+FROM "mlops"."after_dbt"."peliculas" as p
+INNER JOIN "mlops"."after_dbt"."scores" as s USING(movie_id)
+INNER JOIN "mlops"."after_dbt"."usuarios" as u USING(user_id)
+  );
+  
+[0m20:43:42.314553 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.045 seconds
+[0m20:43:42.318585 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.319081 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films" rename to "unified_films__dbt_backup"
+[0m20:43:42.319980 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.323280 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.323760 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films__dbt_tmp" rename to "unified_films"
+[0m20:43:42.324499 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:43:42.326564 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:43:42.327033 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.327551 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:43:42.339776 [debug] [Thread-1 (]: SQL status: COMMIT in 0.012 seconds
+[0m20:43:42.343553 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."unified_films__dbt_backup"
+[0m20:43:42.344448 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:43:42.344915 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+drop table if exists "mlops"."after_dbt"."unified_films__dbt_backup" cascade
+[0m20:43:42.348837 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m20:43:42.352362 [debug] [Thread-1 (]: On model.films_preparation.unified_films: Close
+[0m20:43:42.353148 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1fd60d31-8fb2-41e5-95aa-7a40f47854fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02a7f4e420>]}
+[0m20:43:42.354042 [info ] [Thread-1 (]: 4 of 4 OK created sql table model after_dbt.unified_films ...................... [[32mSELECT 25000[0m in 0.11s]
+[0m20:43:42.355087 [debug] [Thread-1 (]: Finished running node model.films_preparation.unified_films
+[0m20:43:42.356458 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:42.356814 [debug] [MainThread]: On master: BEGIN
+[0m20:43:42.357123 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:43:42.365210 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:43:42.365702 [debug] [MainThread]: On master: COMMIT
+[0m20:43:42.366043 [debug] [MainThread]: Using postgres connection "master"
+[0m20:43:42.366356 [debug] [MainThread]: On master: COMMIT
+[0m20:43:42.366824 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:43:42.367176 [debug] [MainThread]: On master: Close
+[0m20:43:42.367693 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:43:42.368002 [debug] [MainThread]: Connection 'model.films_preparation.unified_films' was properly closed.
+[0m20:43:42.368415 [info ] [MainThread]: 
+[0m20:43:42.368867 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.56 seconds (0.56s).
+[0m20:43:42.370384 [debug] [MainThread]: Command end result
+[0m20:43:42.393798 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:43:42.395707 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:43:42.402728 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/dagster/app/dbt-project/target/run_results.json
+[0m20:43:42.403131 [info ] [MainThread]: 
+[0m20:43:42.403717 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:43:42.404215 [info ] [MainThread]: 
+[0m20:43:42.404625 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m20:43:42.406558 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.7572463, "process_in_blocks": "0", "process_kernel_time": 0.298306, "process_mem_max_rss": "117464", "process_out_blocks": "2688", "process_user_time": 3.850288}
+[0m20:43:42.407109 [debug] [MainThread]: Command `dbt build` succeeded at 20:43:42.406984 after 2.76 seconds
+[0m20:43:42.407525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b15f2720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b1460b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f02b1bb50d0>]}
+[0m20:43:42.407926 [debug] [MainThread]: Flushing usage events
+[0m20:43:43.311784 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:45:38.734695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff714a6acc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff71325d3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff71325d610>]}
+
+
+============================== 20:45:38.738130 | 3a2e2fae-4a7d-44bb-b632-cfbe5493ba24 ==============================
+[0m20:45:38.738130 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:45:38.738962 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/root/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/dagster/app/dbt-project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:45:38.981944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff711d7d0d0>]}
+[0m20:45:39.079342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff713f7b860>]}
+[0m20:45:39.080236 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m20:45:39.190595 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:45:39.313462 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m20:45:39.314620 [debug] [MainThread]: Partial parsing: updated file: films_preparation://models/schema.yml
+[0m20:45:39.880284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff712af4230>]}
+[0m20:45:39.960508 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:45:39.963864 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:45:39.996756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff70fc04350>]}
+[0m20:45:39.997271 [info ] [MainThread]: Found 4 models, 3 sources, 431 macros
+[0m20:45:40.000030 [info ] [MainThread]: 
+[0m20:45:40.000725 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:45:40.001448 [info ] [MainThread]: 
+[0m20:45:40.002629 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:45:40.008916 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mlops'
+[0m20:45:40.050709 [debug] [ThreadPool]: Using postgres connection "list_mlops"
+[0m20:45:40.051174 [debug] [ThreadPool]: On list_mlops: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:45:40.051567 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:45:40.060900 [debug] [ThreadPool]: SQL status: SELECT 61 in 0.009 seconds
+[0m20:45:40.062653 [debug] [ThreadPool]: On list_mlops: Close
+[0m20:45:40.064315 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mlops, now list_mlops_after_dbt)
+[0m20:45:40.072427 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:45:40.073009 [debug] [ThreadPool]: On list_mlops_after_dbt: BEGIN
+[0m20:45:40.073432 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:45:40.081720 [debug] [ThreadPool]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.082247 [debug] [ThreadPool]: Using postgres connection "list_mlops_after_dbt"
+[0m20:45:40.082729 [debug] [ThreadPool]: On list_mlops_after_dbt: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "list_mlops_after_dbt"} */
+select
+      'mlops' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'after_dbt'
+    union all
+    select
+      'mlops' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'after_dbt'
+  
+[0m20:45:40.085651 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.002 seconds
+[0m20:45:40.087180 [debug] [ThreadPool]: On list_mlops_after_dbt: ROLLBACK
+[0m20:45:40.087794 [debug] [ThreadPool]: On list_mlops_after_dbt: Close
+[0m20:45:40.093848 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.094294 [debug] [MainThread]: On master: BEGIN
+[0m20:45:40.094666 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:45:40.102618 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.103031 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.103458 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:45:40.106473 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m20:45:40.107900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff710966540>]}
+[0m20:45:40.108362 [debug] [MainThread]: On master: ROLLBACK
+[0m20:45:40.108910 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.109231 [debug] [MainThread]: On master: BEGIN
+[0m20:45:40.110053 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m20:45:40.110395 [debug] [MainThread]: On master: COMMIT
+[0m20:45:40.110756 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.111084 [debug] [MainThread]: On master: COMMIT
+[0m20:45:40.111556 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:45:40.111913 [debug] [MainThread]: On master: Close
+[0m20:45:40.113964 [debug] [Thread-1 (]: Began running node model.films_preparation.peliculas
+[0m20:45:40.114567 [info ] [Thread-1 (]: 1 of 4 START sql table model after_dbt.peliculas ............................... [RUN]
+[0m20:45:40.115202 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mlops_after_dbt, now model.films_preparation.peliculas)
+[0m20:45:40.115568 [debug] [Thread-1 (]: Began compiling node model.films_preparation.peliculas
+[0m20:45:40.124158 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.peliculas"
+[0m20:45:40.124778 [debug] [Thread-1 (]: Began executing node model.films_preparation.peliculas
+[0m20:45:40.166210 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.peliculas"
+[0m20:45:40.167088 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.167769 [debug] [Thread-1 (]: On model.films_preparation.peliculas: BEGIN
+[0m20:45:40.168107 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:45:40.176367 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.176794 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.177206 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."peliculas__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST( "id" as INT ) as movie_id,
+	"Name" as name,
+	CAST( CAST("War" as INT) as  BOOL ) as war,
+	CAST( CAST("Crime" as INT) as  BOOL ) as crime,
+	CAST( CAST("Drama" as INT) as  BOOL ) as drama,
+	CAST( CAST("Action" as INT) as  BOOL ) as "action",
+	CAST( CAST("Comedy" as INT) as  BOOL ) as comedy,
+	CAST( CAST("Horror" as INT) as  BOOL ) as horror,
+	CAST( CAST("Sci_Fi" as INT) as  BOOL ) as sci_fi,
+	CAST( CAST("Fantasy" as INT) as  BOOL ) as fantasy,
+	CAST( CAST("Musical" as INT) as  BOOL ) as musical,
+	CAST( CAST("Mystery" as INT) as  BOOL ) as mystery,
+	CAST( CAST("Romance" as INT) as  BOOL ) as romance,
+	CAST( CAST("Western" as INT) as  BOOL ) as western,
+	CAST( CAST("unknown" as INT) as  BOOL ) as "unknown",
+	CAST( CAST("Thriller" as INT) as  BOOL ) as thriller,
+	CAST( CAST("Adventure" as INT) as  BOOL ) as adventure,
+	CAST( CAST("Animation" as INT) as  BOOL ) as animation,
+	CAST( CAST("Film_Noir" as INT) as  BOOL ) as film_noir,
+	CAST( CAST("Children_s" as INT) as  BOOL ) as childrens,
+	CAST( CAST("Documentary" as INT) as  BOOL ) as documentary,
+	TO_DATE("Release_Date", 'YY-MM-DD') as release_date
+FROM "mlops"."source_csv"."peliculas_csv"
+  );
+  
+[0m20:45:40.183482 [debug] [Thread-1 (]: SQL status: SELECT 1344 in 0.006 seconds
+[0m20:45:40.190272 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.190696 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas" rename to "peliculas__dbt_backup"
+[0m20:45:40.191567 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.194789 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.195267 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+alter table "mlops"."after_dbt"."peliculas__dbt_tmp" rename to "peliculas"
+[0m20:45:40.196024 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.217656 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:45:40.218094 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.218448 [debug] [Thread-1 (]: On model.films_preparation.peliculas: COMMIT
+[0m20:45:40.221168 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m20:45:40.228014 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."peliculas__dbt_backup"
+[0m20:45:40.233298 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.peliculas"
+[0m20:45:40.233793 [debug] [Thread-1 (]: On model.films_preparation.peliculas: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.peliculas"} */
+drop table if exists "mlops"."after_dbt"."peliculas__dbt_backup" cascade
+[0m20:45:40.236340 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:45:40.239249 [debug] [Thread-1 (]: On model.films_preparation.peliculas: Close
+[0m20:45:40.241242 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff7147ae360>]}
+[0m20:45:40.242246 [info ] [Thread-1 (]: 1 of 4 OK created sql table model after_dbt.peliculas .......................... [[32mSELECT 1344[0m in 0.13s]
+[0m20:45:40.243150 [debug] [Thread-1 (]: Finished running node model.films_preparation.peliculas
+[0m20:45:40.243656 [debug] [Thread-1 (]: Began running node model.films_preparation.scores
+[0m20:45:40.244412 [info ] [Thread-1 (]: 2 of 4 START sql table model after_dbt.scores .................................. [RUN]
+[0m20:45:40.245125 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.peliculas, now model.films_preparation.scores)
+[0m20:45:40.245566 [debug] [Thread-1 (]: Began compiling node model.films_preparation.scores
+[0m20:45:40.248947 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.scores"
+[0m20:45:40.250012 [debug] [Thread-1 (]: Began executing node model.films_preparation.scores
+[0m20:45:40.255799 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.scores"
+[0m20:45:40.256688 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.257123 [debug] [Thread-1 (]: On model.films_preparation.scores: BEGIN
+[0m20:45:40.257489 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:45:40.265811 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.266283 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.266669 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."scores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	TO_DATE( "Date" , 'YY-MM-DD') as rating_date,
+	CAST( "rating" as INT ) as rating,
+	CAST( "user_id" as INT ) as user_id,
+	CAST( "movie_id" as INT ) as movie_id
+	
+FROM "mlops"."source_csv"."scores_csv"
+  );
+  
+[0m20:45:40.293073 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.026 seconds
+[0m20:45:40.296790 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.297372 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores" rename to "scores__dbt_backup"
+[0m20:45:40.298153 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.304632 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.305117 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+alter table "mlops"."after_dbt"."scores__dbt_tmp" rename to "scores"
+[0m20:45:40.305890 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.307834 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:45:40.308225 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.308567 [debug] [Thread-1 (]: On model.films_preparation.scores: COMMIT
+[0m20:45:40.316729 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m20:45:40.319943 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."scores__dbt_backup"
+[0m20:45:40.320818 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.scores"
+[0m20:45:40.321329 [debug] [Thread-1 (]: On model.films_preparation.scores: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.scores"} */
+drop table if exists "mlops"."after_dbt"."scores__dbt_backup" cascade
+[0m20:45:40.323819 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:45:40.325714 [debug] [Thread-1 (]: On model.films_preparation.scores: Close
+[0m20:45:40.326605 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff70ecc7050>]}
+[0m20:45:40.327546 [info ] [Thread-1 (]: 2 of 4 OK created sql table model after_dbt.scores ............................. [[32mSELECT 25000[0m in 0.08s]
+[0m20:45:40.329702 [debug] [Thread-1 (]: Finished running node model.films_preparation.scores
+[0m20:45:40.333832 [debug] [Thread-1 (]: Began running node model.films_preparation.usuarios
+[0m20:45:40.336511 [info ] [Thread-1 (]: 3 of 4 START sql table model after_dbt.usuarios ................................ [RUN]
+[0m20:45:40.337348 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.scores, now model.films_preparation.usuarios)
+[0m20:45:40.337797 [debug] [Thread-1 (]: Began compiling node model.films_preparation.usuarios
+[0m20:45:40.340781 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.usuarios"
+[0m20:45:40.341599 [debug] [Thread-1 (]: Began executing node model.films_preparation.usuarios
+[0m20:45:40.345742 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.usuarios"
+[0m20:45:40.346647 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.347178 [debug] [Thread-1 (]: On model.films_preparation.usuarios: BEGIN
+[0m20:45:40.347533 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:45:40.355318 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.355765 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.356127 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."usuarios__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	CAST("id" as INT) as user_id,
+	"Occupation" as occupation ,
+	TO_DATE("Active_Since", 'YY-MM-DD') as active_since
+FROM "mlops"."source_csv"."usuarios_csv"
+  );
+  
+[0m20:45:40.359295 [debug] [Thread-1 (]: SQL status: SELECT 377 in 0.003 seconds
+[0m20:45:40.362909 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.363409 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios" rename to "usuarios__dbt_backup"
+[0m20:45:40.364196 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.367250 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.367719 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+alter table "mlops"."after_dbt"."usuarios__dbt_tmp" rename to "usuarios"
+[0m20:45:40.368420 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.370259 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:45:40.370626 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.370957 [debug] [Thread-1 (]: On model.films_preparation.usuarios: COMMIT
+[0m20:45:40.372645 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m20:45:40.375605 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."usuarios__dbt_backup"
+[0m20:45:40.376316 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.usuarios"
+[0m20:45:40.376697 [debug] [Thread-1 (]: On model.films_preparation.usuarios: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.usuarios"} */
+drop table if exists "mlops"."after_dbt"."usuarios__dbt_backup" cascade
+[0m20:45:40.379196 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m20:45:40.381318 [debug] [Thread-1 (]: On model.films_preparation.usuarios: Close
+[0m20:45:40.384091 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff70fc04c50>]}
+[0m20:45:40.384992 [info ] [Thread-1 (]: 3 of 4 OK created sql table model after_dbt.usuarios ........................... [[32mSELECT 377[0m in 0.05s]
+[0m20:45:40.385719 [debug] [Thread-1 (]: Finished running node model.films_preparation.usuarios
+[0m20:45:40.386657 [debug] [Thread-1 (]: Began running node model.films_preparation.unified_films
+[0m20:45:40.387156 [info ] [Thread-1 (]: 4 of 4 START sql table model after_dbt.unified_films ........................... [RUN]
+[0m20:45:40.387853 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.films_preparation.usuarios, now model.films_preparation.unified_films)
+[0m20:45:40.388278 [debug] [Thread-1 (]: Began compiling node model.films_preparation.unified_films
+[0m20:45:40.392269 [debug] [Thread-1 (]: Writing injected SQL for node "model.films_preparation.unified_films"
+[0m20:45:40.393175 [debug] [Thread-1 (]: Began executing node model.films_preparation.unified_films
+[0m20:45:40.397134 [debug] [Thread-1 (]: Writing runtime sql for node "model.films_preparation.unified_films"
+[0m20:45:40.397827 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.398184 [debug] [Thread-1 (]: On model.films_preparation.unified_films: BEGIN
+[0m20:45:40.398567 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:45:40.406530 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.406973 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.407392 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+
+  
+    
+
+  create  table "mlops"."after_dbt"."unified_films__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+	movie_id, name, war, crime, drama, "action", comedy,
+	horror, sci_fi, fantasy, musical, mystery, romance,
+	western, "unknown", thriller, adventure, animation,
+	film_noir, childrens, documentary, release_date,
+    u.occupation, u.active_since,
+    s.rating_date, s.rating
+FROM "mlops"."after_dbt"."peliculas" as p
+INNER JOIN "mlops"."after_dbt"."scores" as s USING(movie_id)
+INNER JOIN "mlops"."after_dbt"."usuarios" as u USING(user_id)
+  );
+  
+[0m20:45:40.450554 [debug] [Thread-1 (]: SQL status: SELECT 25000 in 0.043 seconds
+[0m20:45:40.454152 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.454561 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films" rename to "unified_films__dbt_backup"
+[0m20:45:40.455559 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:45:40.460077 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.460548 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+alter table "mlops"."after_dbt"."unified_films__dbt_tmp" rename to "unified_films"
+[0m20:45:40.461339 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:45:40.463209 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:45:40.463593 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.463970 [debug] [Thread-1 (]: On model.films_preparation.unified_films: COMMIT
+[0m20:45:40.478189 [debug] [Thread-1 (]: SQL status: COMMIT in 0.014 seconds
+[0m20:45:40.481004 [debug] [Thread-1 (]: Applying DROP to: "mlops"."after_dbt"."unified_films__dbt_backup"
+[0m20:45:40.481854 [debug] [Thread-1 (]: Using postgres connection "model.films_preparation.unified_films"
+[0m20:45:40.482218 [debug] [Thread-1 (]: On model.films_preparation.unified_films: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "films_preparation", "target_name": "dev", "node_id": "model.films_preparation.unified_films"} */
+drop table if exists "mlops"."after_dbt"."unified_films__dbt_backup" cascade
+[0m20:45:40.485284 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m20:45:40.487049 [debug] [Thread-1 (]: On model.films_preparation.unified_films: Close
+[0m20:45:40.487730 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a2e2fae-4a7d-44bb-b632-cfbe5493ba24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff70eceba10>]}
+[0m20:45:40.488435 [info ] [Thread-1 (]: 4 of 4 OK created sql table model after_dbt.unified_films ...................... [[32mSELECT 25000[0m in 0.10s]
+[0m20:45:40.489439 [debug] [Thread-1 (]: Finished running node model.films_preparation.unified_films
+[0m20:45:40.491054 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.491406 [debug] [MainThread]: On master: BEGIN
+[0m20:45:40.491753 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:45:40.499491 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m20:45:40.499978 [debug] [MainThread]: On master: COMMIT
+[0m20:45:40.500342 [debug] [MainThread]: Using postgres connection "master"
+[0m20:45:40.500663 [debug] [MainThread]: On master: COMMIT
+[0m20:45:40.501217 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:45:40.501641 [debug] [MainThread]: On master: Close
+[0m20:45:40.502229 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:45:40.502535 [debug] [MainThread]: Connection 'model.films_preparation.unified_films' was properly closed.
+[0m20:45:40.502935 [info ] [MainThread]: 
+[0m20:45:40.503519 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.50 seconds (0.50s).
+[0m20:45:40.505067 [debug] [MainThread]: Command end result
+[0m20:45:40.528653 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/dagster/app/dbt-project/target/manifest.json
+[0m20:45:40.530528 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/dagster/app/dbt-project/target/semantic_manifest.json
+[0m20:45:40.537318 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/dagster/app/dbt-project/target/run_results.json
+[0m20:45:40.537792 [info ] [MainThread]: 
+[0m20:45:40.538537 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:45:40.539070 [info ] [MainThread]: 
+[0m20:45:40.540146 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m20:45:40.542133 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 1.9155859, "process_in_blocks": "0", "process_kernel_time": 0.344768, "process_mem_max_rss": "119800", "process_out_blocks": "2680", "process_user_time": 2.864944}
+[0m20:45:40.543021 [debug] [MainThread]: Command `dbt build` succeeded at 20:45:40.542780 after 1.92 seconds
+[0m20:45:40.544031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff714a6acc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff710d289e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff713286540>]}
+[0m20:45:40.544930 [debug] [MainThread]: Flushing usage events
+[0m20:45:41.370195 [debug] [MainThread]: An error was encountered while trying to flush usage events

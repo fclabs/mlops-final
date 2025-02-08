@@ -10,12 +10,12 @@ sources:
       - name: peliculas_csv
         meta:
           dagster:
-            asset_key: ["external_sources" , "peliculas_csv"]
+            asset_key:  "peliculas_csv" 
       - name: scores_csv
         meta:
           dagster:
-            asset_key: ["external_sources" , "scores_csv"]
+            asset_key: "scores_csv" 
       - name: usuarios_csv
         meta:
           dagster:
-            asset_key: ["external_sources" , "usuarios_csv"]
+            asset_key:  "usuarios_csv" 

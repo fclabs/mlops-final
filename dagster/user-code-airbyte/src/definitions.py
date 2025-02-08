@@ -9,7 +9,7 @@ airbyte_assets = load_assets_from_airbyte_instance(
         host=os.environ.get("AIRBYTE_HOST", "localhost"),
         port=os.environ.get("AIRBYTE_PORT", "8000"),
     ),
-    connection_to_group_fn=lambda x: "external_sources",
+    connection_to_group_fn=lambda x: "airbyte",
 )
 
 defs = dg.Definitions(

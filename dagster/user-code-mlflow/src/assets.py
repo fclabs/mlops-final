@@ -1,6 +1,5 @@
-from dagster import asset
+from dagster import asset, AssetKey, AssetIn
 
 
-@asset
-def users(context):
-    context.log.info("Testing")
+# @asset(ins={"unified_films": AssetIn(key=("default", "unified_films"))})
+# def training_data(unified_films): ...
