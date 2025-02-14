@@ -96,6 +96,8 @@ services:
     environment:
       DAGSTER_POSTGRES_DB: "dagster"
       DAGSTER_CURRENT_IMAGE: "user-code-mlflow"
+      MLFLOW_HOSTNAME: mlflow-server
+      MLFLOW_PORT: 8080
     expose:
       - 4000
     volumes:
@@ -175,7 +177,6 @@ services:
       - "8080"
     networks:
       - dagster
-      - postgres
 
 networks:
   postgres:

@@ -17,6 +17,6 @@ def postgres_resource(context):
 
 
 @resource
-def mlflow_resource(context):
-    res = {"experiment_name": "recommendation_model"}
-    return res
+def postgres_query(context):
+
+    return "SELECT * FROM after_dbt.unified_films"  # replace 'my_table' with your PostgreSQL table name

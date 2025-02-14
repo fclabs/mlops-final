@@ -1,0 +1,6 @@
+artifact_location: /opt/dagster/app/get_mlflow_uri()/845296828936429880
+creation_time: 1739118772583
+experiment_id: '845296828936429880'
+last_update_time: 1739118772583
+lifecycle_stage: active
+name: recommender_system

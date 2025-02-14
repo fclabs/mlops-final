@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1739132099964
+current_stage: None
+description: null
+last_updated_timestamp: 1739132099964
+name: keras_dot_product_model
+run_id: b5b5a42ca4ec4c2da40578c7afc15fc4
+run_link: null
+source: /opt/dagster/app/get_mlflow_uri()/845296828936429880/b5b5a42ca4ec4c2da40578c7afc15fc4/artifacts/keras_dot_product_model
+status: READY
+status_message: null
+storage_location: /opt/dagster/app/get_mlflow_uri()/845296828936429880/b5b5a42ca4ec4c2da40578c7afc15fc4/artifacts/keras_dot_product_model
+user_id: null
+version: 2

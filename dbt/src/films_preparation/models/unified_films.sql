@@ -1,5 +1,5 @@
 SELECT 
-	movie_id, name, war, crime, drama, "action", comedy,
+	movie_id,  user_id, name, war, crime, drama, "action", comedy,
 	horror, sci_fi, fantasy, musical, mystery, romance,
 	western, "unknown", thriller, adventure, animation,
 	film_noir, childrens, documentary, release_date,

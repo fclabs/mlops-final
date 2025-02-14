@@ -1,0 +1,15 @@
+artifact_uri: /opt/dagster/app/get_mlflow_uri()/845296828936429880/22ac46192283406aa0b276eef051e3a2/artifacts
+end_time: 1739131402157
+entry_point_name: ''
+experiment_id: '845296828936429880'
+lifecycle_stage: active
+run_id: 22ac46192283406aa0b276eef051e3a2
+run_name: __ASSET_JOB
+run_uuid: 22ac46192283406aa0b276eef051e3a2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739131399127
+status: 3
+tags: []
+user_id: root
